@@ -1,20 +1,27 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { ADBClient } from "mobile-use";
 
 const adb = new ADBClient();
+
 // Create an MCP server
-const server = new McpServer({
-  name: "Mobile MCP",
-  version: "0.0.1",
-});
+const server = new McpServer(
+  {
+    name: "Mobile MCP",
+    version: "0.0.1",
+  },
+  {
+    instructions: `Use mobile_dump_ui for navigating and interacting with the apps. Use mobile_screenshot as fallback to understand the context.`,
+  }
+);
 
 // Initialize ADB client
 // ADB Tools
 server.tool(
   "mobile_dump_ui",
-  "Get a detailed hierarchy of all interactive UI elements on the current screen, including their positions, text, and attributes",
+  "Get a detailed hierarchy of all interactive UI elements on the current screen, including their positions, text, and attributes. Use this when you want to navigate or take actions.",
   {},
   async () => {
     const ui = await adb.dumpUI();
@@ -77,12 +84,17 @@ server.tool(
 
 server.tool(
   "mobile_screenshot",
-  "Capture the current screen state as an image, useful for visual verification or when UI hierarchy is insufficient",
+  "Capture the current screen state as an image, useful for visual verification or when UI hierarchy is insufficient.",
   {},
   async () => {
     const screenshot = await adb.screenshot();
+    const size = await adb.screenSize();
     return {
       content: [
+        {
+          type: "text",
+          text: `Screenshot captured at width: ${size.width}px and height: ${size.height}px`,
+        },
         {
           data: screenshot.toString("base64"),
           mimeType: "image/png",

@@ -1,6 +1,6 @@
 {
   "name": "mobile-mcp",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A MCP server to control your mobile devices",
   "main": "index.ts",
   "bin": {

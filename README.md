@@ -1,12 +1,10 @@
-<div align="center">
-
 ### Mobile MCP
 
 A Model Context Protocol (MCP) server that provides mobile automation capabilities. This server enables LLMs to interact with mobile devices using structured UI dumps without needing to rely on screenshots or other visual inputs.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Discord](https://img.shields.io/badge/discord-purple.svg)](https://discord.runable.xyz)
 
-</div>
+https://github.com/user-attachments/assets/f6d9c88e-005a-4a99-b073-3308b1fbca12
 
 ## Support
 
