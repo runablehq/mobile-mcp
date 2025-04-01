@@ -1,0 +1,27 @@
+{
+  "name": "mobile-mcp",
+  "version": "0.0.1",
+  "description": "A MCP server to control your mobile devices",
+  "main": "index.ts",
+  "bin": {
+    "mobile_mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "appium-adb": "^12.12.1",
+    "mobile-use": "file:../../projects/mobile-use"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "tsconfig": "^7.0.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
