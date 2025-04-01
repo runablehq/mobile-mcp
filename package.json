@@ -1,6 +1,6 @@
 {
   "name": "mobile-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A MCP server to control your mobile devices",
   "main": "index.ts",
   "bin": {
@@ -14,8 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
-    "appium-adb": "^12.12.1",
-    "mobile-use": "file:../../projects/mobile-use"
+    "mobile-use": "^0.0.6"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",

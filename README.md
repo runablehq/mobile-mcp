@@ -18,7 +18,7 @@ You will need to have android sdk platform tools installed for this MCP server t
 ```json
 {
   "mcpServers": {
-    "playwright": {
+    "mobile-mcp": {
       "command": "npx",
       "args": ["mobile-mcp"]
     }
