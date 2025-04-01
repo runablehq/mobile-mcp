@@ -16,6 +16,10 @@
     "@modelcontextprotocol/sdk": "^1.8.0",
     "mobile-use": "^0.0.6"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/runablehq/mobile-mcp.git"
+  },
   "devDependencies": {
     "@types/node": "^22.13.14",
     "tsconfig": "^7.0.0",
