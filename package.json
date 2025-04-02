@@ -1,20 +1,21 @@
 {
   "name": "mobile-mcp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A MCP server to control your mobile devices",
   "main": "index.ts",
   "bin": {
-    "mobile_mcp": "./dist/index.js"
+    "mobile-mcp": "./dist/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts"
+    "build": "tsc"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
-    "mobile-use": "^0.0.6"
+    "inquirer": "^12.5.0",
+    "mobile-use": "^0.0.7"
   },
   "repository": {
     "type": "git",
