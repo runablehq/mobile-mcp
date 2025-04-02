@@ -13,7 +13,11 @@ const server = new McpServer(
     version: "0.0.1",
   },
   {
-    instructions: `Use mobile_dump_ui for navigating and interacting with the apps. Use mobile_screenshot as fallback to understand the context.`,
+    instructions: `Before doing anything, you need to initialize the mobile by using mobile_init. 
+<important_notes>
+Use mobile_dump_ui for navigating and interacting with the apps. Use mobile_screenshot as fallback to understand the context.
+</important_notes>
+    `,
   }
 );
 
@@ -125,10 +129,37 @@ server.tool(
   }
 );
 
+server.tool(
+  "mobile_init",
+  "Use this command to initalize mobile device.",
+  {},
+  async () => {
+    try {
+      await adb.init();
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Successfully initialized mobile devices.`,
+          },
+        ],
+      };
+    } catch (error: any) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Couldn't initalize the device.\n${error.message}`,
+          },
+        ],
+      };
+    }
+  }
+);
+
 // Start the server
 async function main() {
   const transport = new StdioServerTransport();
-  await adb.init();
   await server.connect(transport);
   console.error("Mobile use mcp server is running.");
 }
