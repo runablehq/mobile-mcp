@@ -12,6 +12,7 @@ Currently, only android phones are supported. iOS support will come soon.
 You will need to have android sdk platform tools installed for this MCP server to work.
 
 ## Configuration
+Add this to your claude desktop config.
 
 ```json
 {
