@@ -6,6 +6,8 @@ A Model Context Protocol (MCP) server that provides mobile automation capabiliti
 
 https://github.com/user-attachments/assets/f6d9c88e-005a-4a99-b073-3308b1fbca12
 
+## Installation 
+
 ## Supported Platforms
 
 Currently, only android phones are supported. iOS support will come soon.
@@ -18,13 +20,19 @@ adb
 
 You can run an [android device in an emulator](https://developer.android.com/studio/run/emulator) or connect your physical android phone with usb debugging on.
 
-## Configuration
-Add this to your claude desktop config.
+### Claude Desktop Configuration
+Run the following command to install it automatically
+
+```sh
+npx mobile-mcp install
+```
+
+or add this to your claude desktop config manually.
 
 ```json
 {
   "mcpServers": {
-    "mobile": {
+    "mobile-mcp": {
       "command": "npx",
       "args": ["mobile-mcp"]
     }
