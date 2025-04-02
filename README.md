@@ -1,4 +1,4 @@
-### Mobile MCP
+# Mobile MCP
 
 A Model Context Protocol (MCP) server that provides mobile automation capabilities. This server enables LLMs to interact with mobile devices using structured UI dumps without needing to rely on screenshots or other visual inputs.
 
@@ -6,10 +6,17 @@ A Model Context Protocol (MCP) server that provides mobile automation capabiliti
 
 https://github.com/user-attachments/assets/f6d9c88e-005a-4a99-b073-3308b1fbca12
 
-## Support
+## Supported Platforms
 
 Currently, only android phones are supported. iOS support will come soon.
-You will need to have android sdk platform tools installed for this MCP server to work.
+
+You need to [install android studio](https://developer.android.com/studio/install) and have platform tools installed. Run the following to command to verify once you have installed all this.
+
+```sh
+adb
+```
+
+You can run an [android device in an emulator](https://developer.android.com/studio/run/emulator) or connect your physical android phone with usb debugging on.
 
 ## Configuration
 Add this to your claude desktop config.
@@ -17,7 +24,7 @@ Add this to your claude desktop config.
 ```json
 {
   "mcpServers": {
-    "mobile-mcp": {
+    "mobile": {
       "command": "npx",
       "args": ["mobile-mcp"]
     }
