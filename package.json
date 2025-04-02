@@ -1,10 +1,10 @@
 {
   "name": "mobile-mcp",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A MCP server to control your mobile devices",
   "main": "index.ts",
   "bin": {
-    "mobile-mcp": "./dist/index.js"
+    "mobile-mcp": "./dist/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,9 +23,11 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
+    "@types/yargs": "^17.0.33",
     "tsconfig": "^7.0.0",
     "tsup": "^8.4.0",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "yargs": "^17.7.2"
   }
 }
